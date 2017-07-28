@@ -1,0 +1,24 @@
+/* AlphaGriffin DeskApp
+
+Index.css
+<@Ruckusist>
+*/
+
+html, body, .container-main {
+  height: 100%, auto;
+  background-color: inherit;
+  color: #fff;
+}
+
+html {
+    -webkit-app-region: drag;
+}
+
+.container-main {
+  padding: 10px;
+  margin: auto;
+}
+
+p {
+  color: #ffffff;
+}
