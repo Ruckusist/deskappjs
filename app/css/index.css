@@ -5,8 +5,12 @@ Index.css
 */
 
 html, body, .container-main {
-  height: 100%, auto;
   background-color: inherit;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   color: #fff;
 }
 
@@ -15,8 +19,6 @@ html {
 }
 
 .container-main {
-  padding: 10px;
-  margin: auto;
 }
 
 p {

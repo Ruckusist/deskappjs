@@ -20,14 +20,13 @@ const BrowserWindow = electron.BrowserWindow
 let mainWindow
 let secondWindow
 
-
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow(
     {  width: 600,
        height: 420,
        frame: false,
-       backgroundColor: '#111316',
+       backgroundColor: '#222',
        icon: path.join(__dirname, 'app/img/logo64.png'),
        titleBarStyle: 'hidden',
        show: false,
@@ -38,6 +37,7 @@ function createWindow () {
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'app/index.html'),
+    // pathname: 'https://alphagriffin.com',
     protocol: 'file:',
     slashes: true
   }))
