@@ -9,6 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/buttons.css">
 
     <!-- Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,13 +19,16 @@
 
     <!-- Main Containing Div w/ particles background-->
     <div id="particles-js" class='container'>
-      <!-- Buttons -->
-      <div class='offbtn'>
-        <button onclick="turnoff()">TURN OFF</button>
-      </div>
       <!-- Mainscreen Nav -->
-      <div class='frontlogo'>
-        <img src="img/logo256.png" alt="AlphaGriffin.com"/>
+      <div class='front' id='context'>
+        <img src="img/logo256.png" alt="AlphaGriffin.com" class="frontlogo"/>
+      </div>
+      <!-- Buttons -->
+      <div class='btn-holder'>
+        <div><a href="#" class="btn">Balances</a><span> </span></div>
+        <div><a href="#" class="btn">Miners</a><span> </span></div>
+        <div><a href="#" class="btn">Lending</a><span> </span></div>
+        <div onclick="turnoff()"><a href="#" class="btn">Exit</a></div>
       </div>
       <!-- Scripts -->
       <script src="js/buttons.js" type="text/javascript"></script>

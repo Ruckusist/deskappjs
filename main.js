@@ -20,8 +20,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow(
-    {  width: 600,
-       height: 420,
+    {  width: 800,
+       height: 640,
        frame: false,
        backgroundColor: '#222',
        icon: path.join(__dirname, 'app/img/logo64.png'),
@@ -78,7 +78,7 @@ ipcMain.on('show-about', function() {
 });
 
 // Create the faq window
-ipcMain.on('show-faq', function() {
+ipcMain.on('show-btc-balance', function() {
   mainWindow.loadURL('file://' + __dirname + 'app/templates/bitcoin_balance.html');
 });
 
