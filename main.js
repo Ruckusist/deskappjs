@@ -6,19 +6,16 @@
 'use strict';
 // Imports
 const electron = require('electron')
+const path = require('path')
+const url = require('url')
 
 // Defines
 const app = electron.app
-const {ipcMain} = require('electron')
-const path = require('path')
-const url = require('url')
+const ipcMain = require('electron').ipcMain;
 const BrowserWindow = electron.BrowserWindow
-// const newWindowBtn = document.getElementById('frameless-window')
-// path = path.join(`file://${__dirname}/index.html`)
 
 // Globals
 let mainWindow
-let secondWindow
 
 function createWindow () {
   // Create the browser window.
@@ -32,9 +29,8 @@ function createWindow () {
        show: false,
      }
   )
-  // load the path
-  // Load a URL in the window to the local index.html path
 
+  // Load a URL in the window to the local app/index.html path
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'app/index.html'),
     // pathname: 'https://alphagriffin.com',
@@ -70,3 +66,23 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+// Show the main window
+ipcMain.on('show-main', function() {
+  mainWindow.loadURL(path.join('file://' + __dirname + 'app/index.html'));
+});
+
+// Create the about window
+ipcMain.on('show-about', function() {
+  mainWindow.loadURL('file://' + __dirname + 'app/templates/about.html');
+});
+
+// Create the faq window
+ipcMain.on('show-faq', function() {
+  mainWindow.loadURL('file://' + __dirname + 'app/templates/bitcoin_balance.html');
+});
+
+// Create the faq window
+ipcMain.on('exit', function() {
+  app.quit()
+});
